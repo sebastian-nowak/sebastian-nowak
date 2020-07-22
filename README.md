@@ -1,16 +1,35 @@
-### Hi there 👋
 
-<!--
-**sebastian-nowak/sebastian-nowak** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### Hey there! 👋
 
-Here are some ideas to get you started:
+```python
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+from dataclasses import dataclass
+from typing import Tuple
+
+
+class Meta(type):
+    def __new__(cls, name, bases, attrs):
+        new_cls = super().__new__(cls, name, bases, attrs)
+        return dataclass(unsafe_hash=True, frozen=True)(new_cls)
+
+class Bio(metaclass=Meta):
+    name        : str = 'Sebastian Daniel Nowak'
+    designation : str = 'Software Engineer'
+    base        : str = 'Warsaw, Poland'
+    hobbies     : str = 'Road cycling, climbing, photography'
+
+class Stack(metaclass=Meta):
+    languages   : Tuple[str, ...] = ('JavaScript', 'Python', 'Java', 'C++')
+    databases   : Tuple[str, ...] = ('MySQL', 'PostgreSQL', 'MongoDB', 'Redis')
+    frameworks  : Tuple[str, ...] = ('React', 'Vue.js')
+    misc        : Tuple[str, ...] = ('Bazel', 'Docker')
+```
+
+
+### Get in touch
+
+<a href="https://linkedin.com/in/sebastian-daniel-nowak/"><img width="22px" valign="top" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/099dc12b59179d07d534069bc8551718f786d91a/images/svg/linkedin.svg"/></a>&nbsp; LinkedIn: https://linkedin.com/in/sebastian-daniel-nowak/
+
+<a href="https://strava.com/athletes/sebastian-nowak"><img width="22px" valign="top" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/099dc12b59179d07d534069bc8551718f786d91a/images/svg/strava.svg"/></a>&nbsp; Strava: https://strava.com/athletes/sebastian-nowak/
+
+<a href="https://instagram.com/sd.nowak/"><img width="22px" valign="top" src="https://raw.githubusercontent.com/edent/SuperTinyIcons/099dc12b59179d07d534069bc8551718f786d91a/images/svg/instagram.svg"/></a>&nbsp; Instagram: https://instagram.com/sd.nowak/
